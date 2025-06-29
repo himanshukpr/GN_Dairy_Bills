@@ -21,7 +21,7 @@ export async function POST(request) {
     // Validate required fields
     const { houseNumber, date, milkQty, milkAmount, cowMilk, cowMilkAmount, other } = body;
     
-    if (!houseNumber || !date || !milkQty || !milkAmount || !cowMilk || !cowMilkAmount || !other) {
+    if (!houseNumber || !date) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }

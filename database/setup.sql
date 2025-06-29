@@ -11,11 +11,11 @@ CREATE TABLE IF NOT EXISTS dairy_bills (
     id SERIAL PRIMARY KEY,
     house_number VARCHAR(255) NOT NULL,
     bill_date DATE NOT NULL,
-    milk_qty DECIMAL(10,2) NOT NULL,
-    milk_amount DECIMAL(10,2) NOT NULL,
-    cow_milk DECIMAL(10,2) NOT NULL,
-    cow_milk_amount DECIMAL(10,2) NOT NULL,
-    other_amount DECIMAL(10,2) NOT NULL,
+    milk_qty DECIMAL(10,2),
+    milk_amount DECIMAL(10,2),
+    cow_milk DECIMAL(10,2),
+    cow_milk_amount DECIMAL(10,2),
+    other_amount DECIMAL(10,2),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -27,8 +27,8 @@ CREATE TABLE house_info (
   id INTEGER PRIMARY KEY,                     -- Continuous ID (gapless)
   date VARCHAR(255) NOT NULL,                 -- Record date
   house_no VARCHAR(50) NOT NULL,              -- House / customer number
-  milk_rate NUMERIC(6, 2),                    -- Buffalo/combined milk rate
-  cow_milk_rate NUMERIC(6, 2),                -- Cow milk rate
+  milk_rate NUMERIC(6, 2) NOT NULL,                    -- Buffalo/combined milk rate
+  cow_milk_rate NUMERIC(6, 2) NOT NULL,                -- Cow milk rate
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Timestamp
 );
 
